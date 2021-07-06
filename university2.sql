@@ -84,5 +84,7 @@ FROM courses
 JOIN exams ON courses.id = exams.course_id
 JOIN exam_student ON exams.id  = exam_student.exam_id
 JOIN students ON exam_student.student_id = students.id
+WHERE exam_student.vote < 18
 GROUP BY courses.id, students.id
 
+                               
